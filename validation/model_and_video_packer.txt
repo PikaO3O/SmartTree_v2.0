@@ -1,0 +1,38 @@
+----------------------------------
+Current ino contains model(s):
+yolov7_tiny
+NA
+NA
+NA
+NA
+NA
+NA
+----------------------------------
+Current model(s)(Default/Customized)
+DEFAULT
+NA
+NA
+NA
+NA
+NA
+NA
+-----------------------------------
+Current NN header file(s): 
+NNObjectDetection.h
+NA
+NA
+NA
+NA
+NA
+NA
+----------------------------------
+Current ino video status:
+ON
+-------------------------------------
+Current NN Model(s) loaded from:
+FLASH
+-------------------------------------
+Current ino contains header file(s): 
+Arduino
+NNObjectDetection
+SmartTreeApp

@@ -1,0 +1,77 @@
+[
+  {
+    "name": "Realtek Ameba Boards (32-bit Arm v8M @500MHz)",
+    "architecture": "AmebaPro2",
+    "version": "4.0.9",
+    "category": "Contributed",
+    "help": {
+      "online": "https://forum.amebaiot.com/"
+    },
+    "url": "https://github.com/Ameba-AIoT/ameba-arduino-pro2/raw/main/Arduino_package/release/ameba_pro2-4.0.9-build20250805.tar.gz",
+    "archiveFileName": "ameba_pro2-4.0.9.tar.gz",
+    "checksum": "SHA-256:8bd1d0694e8d9d9ac729b9300eeef8fb6d2d681fd4905c808fe57c70006525b8",
+    "size": "72476758",
+    "boards": [
+      {
+        "name": "AMB82 (RTL8735B)"
+      },
+      {
+        "name": "AMB82-MINI (RTL8735B)"
+      }
+    ],
+    "toolsDependencies": [
+      {
+        "packager": "realtek",
+        "name": "ameba_pro2_toolchain",
+        "version": "1.0.1-p1"
+      },
+      {
+        "packager": "realtek",
+        "name": "ameba_pro2_toolchain2",
+        "version": "1.0.1-p2"
+      },
+      {
+        "packager": "realtek",
+        "name": "ameba_pro2_tools",
+        "version": "1.4.5"
+      },
+      {
+        "packager": "realtek",
+        "name": "ameba_pro2_nn_models",
+        "version": "1.0.2"
+      }
+    ]
+  },
+  {
+    "host": "x86_64-pc-linux-gnu",
+    "archiveFileName": "ameba_pro2_toolchain_linux-1.0.1-p1.tar.bz2",
+    "url": "https://github.com/Ameba-AIoT/ameba-arduino-pro2/raw/main/Arduino_package/release/ameba_pro2_toolchain_linux-1.0.1-p1.tar.bz2",
+    "checksum": "SHA-256:c279b5fd1bedb40c20ce42a865f1262e2cce55df394f31d42eff062b49ac1e1d",
+    "size": "87994150"
+  },
+  {
+    "host": "x86_64-pc-linux-gnu",
+    "archiveFileName": "ameba_pro2_toolchain_linux-1.0.1-p2.tar.bz2",
+    "url": "https://github.com/Ameba-AIoT/ameba-arduino-pro2/raw/main/Arduino_package/release/ameba_pro2_toolchain_linux-1.0.1-p2.tar.bz2",
+    "checksum": "SHA-256:ca78d21893e1d08b8611be062c5d93482042424cc4860e6c8e3356768c936006",
+    "size": "78722976"
+  },
+  {
+    "host": "x86_64-pc-linux-gnu",
+    "archiveFileName": "ameba_pro2_tools_linux-1.4.5.tar.gz",
+    "url": "https://github.com/Ameba-AIoT/ameba-arduino-pro2/raw/main/Arduino_package/release/ameba_pro2_tools_linux-1.4.5.tar.gz",
+    "checksum": "SHA-256:d944d7e63a0efa0ccc26f60248c8cb24f203f75fa235a9e6c4fbfd18c110c7c1",
+    "size": "13510913"
+  },
+  {
+    "host": "x86_64-pc-linux-gnu",
+    "archiveFileName": "ameba_pro2_nn_models-1.0.2.tar.gz",
+    "url": "https://github.com/Ameba-AIoT/ameba-arduino-pro2/raw/main/Arduino_package/release/ameba_pro2_nn_models-1.0.2.tar.gz",
+    "checksum": "SHA-256:9811b84a1c5db59cd64e28c19f30e183a958becf24f68c84db3d2f1865f6c735",
+    "size": "33649407"
+  },
+  {
+    "url": "https://downloads.arduino.cc/arduino-cli/arduino-cli_1.2.2_Linux_64bit.tar.gz",
+    "archiveFileName": "arduino-cli.tar.gz"
+  }
+]

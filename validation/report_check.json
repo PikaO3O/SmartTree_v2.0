@@ -1,0 +1,19 @@
+{
+  "page_5_original_evidence_pixels_identical": true,
+  "page_6_original_evidence_pixels_identical": true,
+  "page_7_original_evidence_pixels_identical": true,
+  "page_8_original_evidence_pixels_identical": true,
+  "pages": 8,
+  "bytes": 4982723,
+  "sha256": "b29637c847e38a07a498f454a96b0fec4609c832b397e96c0794f7903434b208",
+  "links": [
+    "https://github.com/PikaO3O/SmartTree_v2.0",
+    "https://youtube.com/shorts/PcYU52YbqdI?si=zondtvD29r9LTvL2",
+    "https://www.youtube.com/watch?v=7AZeHTlY3Kw",
+    "https://youtu.be/D-Yb5PcfHdc?si=5_vxSwRFiwOsclLX",
+    "https://github.com/Ameba-AIoT/ameba-arduino-pro2/tree/V4.0.9"
+  ],
+  "searchable_digits": true,
+  "report_page_requirement": "5-8 pages",
+  "planned_repository": "PikaO3O/SmartTree_v2.0"
+}

@@ -1,0 +1,18 @@
+{
+  "returncode": 0,
+  "source_difference": "Only SMARTTREE_DISPLAY_PROFILE default changed from 0 to 1",
+  "command": [
+    "/workspace/scratch/35d3fca268ac/arduino/bin/arduino-cli",
+    "--config-file",
+    "/workspace/scratch/35d3fca268ac/arduino/arduino-cli.yaml",
+    "compile",
+    "--fqbn",
+    "realtek:AmebaPro2:Ameba_AMB82-MINI:04_CameraOption=f37,06_LoadNNModelSource=flash,07_SHOWNNLOGS=Disable",
+    "--build-path",
+    "/workspace/scratch/35d3fca268ac/arduino/build_profile1",
+    "--jobs",
+    "4",
+    "/workspace/scratch/35d3fca268ac/arduino/profile1/SmartTree"
+  ],
+  "config_sha256": "e92a4d0961a8e073d30fa59fcce3631b51c4e6c7b1bbb3f7f51b6d37f5fe7b2d"
+}

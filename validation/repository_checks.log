@@ -1,0 +1,11 @@
+test_diagnostics_and_partial_lines (test_capture.CaptureTest.test_diagnostics_and_partial_lines) ... ok
+test_hold_is_not_a_hit (test_capture.CaptureTest.test_hold_is_not_a_hit) ... ok
+test_real_sample_columns (test_capture.CaptureTest.test_real_sample_columns) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.001s
+
+OK
+PASS: 10 scenario groups (timing, deduplication, recovery, timeout, reconnect, wraparound)
+PASS: 13 v2 scenario groups (grace/evidence, counts, timeout, gaps, HOLD expiry, invalid boxes, wrap, parser)
+PASS: 5 stage copies, reference checksums, no legacy polling/begin replacement, bounded callback queue.

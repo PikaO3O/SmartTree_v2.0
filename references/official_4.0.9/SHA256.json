@@ -1,0 +1,94 @@
+[
+  {
+    "path": "LICENSE",
+    "sha256": "972ab1f64ac2b7e28915bd0e4b3fe1b8149e45c216b128b899bcc35b06a6793f"
+  },
+  {
+    "path": "cores/ambpro2/main.cpp",
+    "sha256": "e87a91de5102ea975264c5e7be1b34cb1aaffec774b943e99a87804296d2e711"
+  },
+  {
+    "path": "cores/ambpro2/video_drv.c",
+    "sha256": "a14ae8f83be4fd292fac7e0e43c5f6a962b025c018522df33c7eabff751c28b5"
+  },
+  {
+    "path": "cores/ambpro2/video_drv.h",
+    "sha256": "d47b2b88ca3f7cb10ed2b67a38614bcade2a013e936e4e2a2a6d5190d8be1bb0"
+  },
+  {
+    "path": "libraries/Multimedia/src/StreamIO.cpp",
+    "sha256": "bd2b4331841928782b7fc7acd5933f278bdcd6075436423ea9db66172d298bfe"
+  },
+  {
+    "path": "libraries/Multimedia/src/StreamIO.h",
+    "sha256": "feee2aaccf25179bc15ab124b9fd242b0338be2563b36c2618c92e67cebd8fa9"
+  },
+  {
+    "path": "libraries/Multimedia/src/VideoStream.cpp",
+    "sha256": "56eea7b18fca60d71d4f71e1735cfc3c336ad04f40e90cd64c917c9ee53ea199"
+  },
+  {
+    "path": "libraries/Multimedia/src/VideoStream.h",
+    "sha256": "41aa7fc7daafe5e5e4ccc09ffae74c9f879e07fd851a2ad94008ec084ee9e27f"
+  },
+  {
+    "path": "libraries/Multimedia/src/VideoStreamOverlay.cpp",
+    "sha256": "151ef973b09022467bc180c82f3e540435b36b082f86b9e4681fe6560584cbb5"
+  },
+  {
+    "path": "libraries/Multimedia/src/VideoStreamOverlay.h",
+    "sha256": "e45e761327b8e88abdce8c12d8a4d8d88a2298eeb2c6bfb4d607475309093fe1"
+  },
+  {
+    "path": "libraries/NeuralNetwork/examples/UVCDObjectDetectionLoop/ObjectClassList.h",
+    "sha256": "17cfcd790a2e488c37912b7ccbee4a5fd79804f3ca043ae8465ee2f75c5f3955"
+  },
+  {
+    "path": "libraries/NeuralNetwork/examples/UVCDObjectDetectionLoop/UVCDObjectDetectionLoop.ino",
+    "sha256": "f18a14e3d6e42c75e8c1e08e2216352417cd09383decac4337f698cb7768f52a"
+  },
+  {
+    "path": "libraries/NeuralNetwork/src/NNModelSelection.h",
+    "sha256": "8a183e172f110602349b755cc6c948d5563debf1266b126eb729ebbf8cd6e37a"
+  },
+  {
+    "path": "libraries/NeuralNetwork/src/NNObjectDetection.cpp",
+    "sha256": "707aed3cdaf35d822738e38398df90605375d7e3561a7fd858ce1acce1e0ff11"
+  },
+  {
+    "path": "libraries/NeuralNetwork/src/NNObjectDetection.h",
+    "sha256": "8088f359112baef3bc17d2d55cc69580004946d02fa6b4fdeaed268ffb6de978"
+  },
+  {
+    "path": "libraries/USB/examples/UVC_Device/UVC_Device.ino",
+    "sha256": "c9a1a7078c07be789b1a2fa6947a1459875b52435e75d7ec5f7b583d252c5683"
+  },
+  {
+    "path": "libraries/USB/src/UVCD.cpp",
+    "sha256": "c978621a73cb4cb7545a89bd6ea0229049e9b91e40feba3ab59d667e02aaff18"
+  },
+  {
+    "path": "libraries/USB/src/UVCD.h",
+    "sha256": "b87d7e6412366bd31a467027f792a73d30e1f3b447d1349fd81e856d557f4794"
+  },
+  {
+    "path": "libraries/USB/src/UVCD_pram.h",
+    "sha256": "0800bd794138c2f7bb638830110ecfe231c3e11cad473e69b6977c3df3e80eb3"
+  },
+  {
+    "path": "libraries/USB/src/usbd_uvc_parm.c",
+    "sha256": "8d1739a53f952facef63d8571c8818ff56316e6aaeeaf2dd291da7abb327f39f"
+  },
+  {
+    "path": "system/component/media/mmfv2/mmf2_module.h",
+    "sha256": "1c7e19f4a59ea3513c82683af8ae62ba8ffb5d83f1b810460fc2ae947595a04c"
+  },
+  {
+    "path": "system/component/media/mmfv2/module_uvcd.h",
+    "sha256": "294ff96ac5c768da75eccc9a8c7ab8c7c299f65240f8760417d00b552abb7c30"
+  },
+  {
+    "path": "system/project/realtek_amebapro2_v0_example/inc/FreeRTOSConfig.h",
+    "sha256": "22836263c67b01366c53c4a98d76b44a93292051dfdf15293a0da82ab6e98268"
+  }
+]

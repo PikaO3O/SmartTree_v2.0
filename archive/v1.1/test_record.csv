@@ -1,0 +1,8 @@
+test_id,target_source,condition,expected,observed,success,latency_seconds,notes
+1,fill_in_real_plant_or_screen,stable_target_3_seconds,PLANT_CONFIRMED,,,,
+2,fill_in_real_plant_or_screen,no_target_6_seconds,UNCONFIRMED_CHECK_VIEW,,,,
+3,fill_in_real_plant_or_screen,target_returns_3_seconds,PLANT_CONFIRMED,,,,
+4,fill_in_real_plant_or_screen,target_stays_60_seconds,no_duplicate_confirm_event,,,,
+5,fill_in_real_plant_or_screen,no_target_60_seconds,no_duplicate_alert_event,,,,
+6,fill_in_real_plant_or_screen,brief_occlusion_under_5_seconds,no_alert_event,,,,
+7,not_applicable,close_and_reopen_camera,restart_confirmation_no_stale_confirm,,,,

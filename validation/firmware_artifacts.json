@@ -1,0 +1,50 @@
+[
+  {
+    "target": "A0",
+    "file": "flash_ntz.bin",
+    "bytes": 10113024,
+    "sha256": "59adfa810826f1db02e20bf11613871f6587d5d920fa991ed3e423f2d57938d5"
+  },
+  {
+    "target": "A1",
+    "file": "flash_ntz.bin",
+    "bytes": 10113024,
+    "sha256": "fa1a09c116f2fd327602510aedc6d6baecd5fe0b7f6bba0cccfcef60aa4ebf0d"
+  },
+  {
+    "target": "B",
+    "file": "flash_ntz.bin",
+    "bytes": 10113024,
+    "sha256": "e3b7032d25baf678e7cafe6fbbff59d1270b218269f023e643326ca464b049d3"
+  },
+  {
+    "target": "C",
+    "file": "flash_ntz.bin",
+    "bytes": 10113024,
+    "sha256": "bf50548da8fb277f98ea23c68b214d374ed2fc3ed3b72736724d6ec4425d1fe0"
+  },
+  {
+    "target": "D",
+    "file": "flash_ntz.bin",
+    "bytes": 10113024,
+    "sha256": "b7c826f3a83898d2cf8f4a124d709a631869ee49b61c3165b4b4f144e4238d9d"
+  },
+  {
+    "target": "E",
+    "file": "flash_ntz.bin",
+    "bytes": 10113024,
+    "sha256": "53d754b3b0cd4495402879c6bb4983a7fba298747ba52c834cacda8c3ba26a6c"
+  },
+  {
+    "target": "F",
+    "file": "flash_ntz.bin",
+    "bytes": 10113024,
+    "sha256": "2ffc5543e50c35bb032da33242ea3ad90d69f5a0d9ce19e1b369dd3694ab1193"
+  },
+  {
+    "target": "F_profile1",
+    "file": "flash_ntz.bin",
+    "bytes": 10113024,
+    "sha256": "023ace3527faf5375377b4ec5f663a5dfde4a8876377c5809f93a99f875878fe"
+  }
+]

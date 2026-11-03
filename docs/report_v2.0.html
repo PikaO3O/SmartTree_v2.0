@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="zh-Hant"><head><meta charset="utf-8"><title>智慧植栽守護站：第三週成果暨 v2.0 更新</title></head><body>
+<!-- Four main pages plus the four original evidence pages: eight pages total. -->
+<section>
+<p class="eyebrow">SMARTTREE / THIRD-WEEK RESULTS + V2.0 UPDATE / 2026.11.04</p>
+<h1>讓 Ameba 看懂生活</h1>
+<h2 class="subtitle">影像辨識創意實作：第三週成果報告<br>智慧植栽守護站｜SmartTree v2.0</h2>
+<p class="lead">盆栽在位辨識與異常事件紀錄；期末整合方向：智慧農業監測系統。</p>
+<div class="callout"><b>證據與版本分開呈現</b><br>2026/10/21 完成的 30 次初測＋10 次重測為既有原型實測，完整保留於第 5～8 頁。v2.0 已完成原始碼整合、4.0.9 編譯及主機邏輯驗證；新版 Windows 相機、LED、USB 重連與長時間表現仍待實機驗證。</div>
+<h3>一、團隊與實際分工</h3>
+<table><tr><th width="30%">成員／學號</th><th>負責內容</th></tr>
+<tr><td>莊啓文／815K0002C</td><td>創意發想、專案過程記錄、參考資料蒐集、專案實作。</td></tr>
+<tr><td>林品睿／815K0001C</td><td>專案實作、架設流程整理、測試影像與操作影片拍攝。</td></tr></table>
+<h3>二、問題與應用目的</h3>
+<p>居家或校園盆栽經清潔、照護與搬動後，可能未回到可觀察的位置。本系統持續辨識畫面內是否有合格盆栽，藉由 LED、提醒及事件歷史協助檢查。第三週購入真實薄荷盆栽，將既有原型帶入實物場景；模型辨識的是盆栽外觀，不辨識薄荷品種、健康、缺水或澆灌需求。</p>
+<h3>三、系統設計與功能延伸</h3>
+<p>攝影機取得影像 → 板上 YOLOv7-tiny → 類別／分數篩選 → 真實結果、顯示框及存在狀態分流 → USB 畫面、LED、Confirm／Alert 與序列歷史。核心辨識在開發板執行，電腦負責觀看與文字紀錄。</p>
+<table><tr><th width="25%">設計</th><th>v2.0 實作</th></tr>
+<tr><td>影像工作獨立</td><td>唯一工作管理攝影機、UVCD、通道與 OSD，沿官方 nnbegin() 流程；Arduino loop 處理 UART、LED 與存在狀態，不等待 USB 協商。</td></tr>
+<tr><td>顯示與判斷分離</td><td>真實結果更新綠色 LIVE；短漏判時顯示最多 600 ms 黃色 HOLD。暫存框不增加真實命中、確認次數或事件。</td></tr>
+<tr><td>確認與事件保留</td><td>保留 2 秒且至少 3 輪真實正結果確認、5 秒連續負結果提醒、LED、事件去重與最近 32 筆 RAM 歷史；新增可關閉的 1 秒漏判容忍。</td></tr></table>
+<p class="small">不新增影格副本或影像通道；回呼以固定上限快照與非阻塞 queue 傳送，不重讀舊結果當成新推論。整張畫面內任一合格盆栽即可確認，尚未限定區域或追蹤同一盆栽身分。</p>
+</section>
+<section>
+<h2>README：材料、設定與重現</h2>
+<h3>四、材料、接線與 SDK／模型配置</h3>
+<table><tr><th width="27%">項目</th><th>設定與用途</th></tr>
+<tr><td>材料</td><td>AMB82-MINI／RTL8735B、原廠攝影機、板上 LED_B／LED_G；薄荷盆栽、固定架與距離尺。未連接水泵、感測器或補光燈。</td></tr>
+<tr><td>開發環境</td><td>Arduino IDE 2.3.10；Realtek Ameba Boards 4.0.9 正式版；Windows 11 相機。交付端以 CLI 1.2.2、f37、Flash、NN Logs Disable 編譯。</td></tr>
+<tr><td>模型與目標</td><td>DEFAULT_YOLOV7TINY、盆栽連續索引 58、信心門檻 0.50、NMS 0.30；沿用模型，未訓練。既有模型輸入資訊為 416 × 416。</td></tr>
+<tr><td>AI／顯示</td><td>通道 3：576 × 320 RGB、來源設定 10 fps，非實測推論速度；既有約 5 次／秒為使用者先前紀錄。通道 0：USB_UVCD_STREAM_PRESET，實際格式由主機協商。</td></tr>
+<tr><td>USB 現有設定</td><td>MJPG=1，YUY2／NV12／H264／H265=0，直接保留。preset 的 FHD／20 fps／H264 是協商前啟動配置，不代表強迫 Windows 使用 H264；無須修改套件。</td></tr>
+<tr><td>一條線的用法</td><td>只接 UART／燒錄口：上傳、115200 指令；只接 OTG（8735）：供電與 UVC 畫面，沒有 UART COM 埠。同時觀看與收集推論才需兩條線；換線若斷電，RAM 紀錄清空。</td></tr></table>
+<h3>五、燒錄與操作步驟</h3>
+<p>① 下載完整 GitHub 專案，開啟 SmartTree/SmartTree.ino，同資料夾所有 .h／.cpp 保留。② 選 AMB82-MINI／4.0.9、正確 COM，感光元件沿用原先成功選項，模型選 Flash。③ 驗證、上傳並 RESET，確認封裝含 yolov7_tiny。④ 先以 UART 測 PING、STATUS，再接 OTG 開啟 Windows 相機。⑤ 盆栽先距鏡頭 20～30 cm、水平正對並固定，讓植物與花盆同時入鏡，避免強光與非必要遮擋。</p>
+<h3>六、狀態、計時與紀錄</h3>
+<table><tr><th width="31%">狀態</th><th>意義與燈號</th></tr>
+<tr><td>DETECTED／HOLD</td><td>綠 LIVE 是最近一輪真實命中；黃 HOLD 沿用上次位置最多 600 ms。邏輯到期後，下次約 100 ms OSD 更新移除；實際顯示延遲待測。</td></tr>
+<tr><td>CHECKING／CONFIRMED</td><td>確認中藍慢閃；滿 2000 ms 正證據且至少 3 輪真實正結果後綠燈。1 秒內漏判保留狀態、暫停正證據累積；不是靠 HOLD 完成確認。</td></tr>
+<tr><td>NOT CONFIRMED</td><td>5 秒連續負結果才提醒一次、藍恆亮；提醒後恢復才新增確認事件。原門檻不變；容忍設 0 可回復 v1.1。</td></tr>
+<tr><td>TIMEOUT／OFFLINE</td><td>1500 ms 無新回呼：NN DATA TIMEOUT、藍快閃；USB 離線：兩燈暗。無回呼不算盆栽消失，資料缺口或逾時需重新確認。</td></tr></table>
+<p class="small">UART 設 115200／新行：PING、STATUS、HISTORY 保留；LOG ON/OFF、SAMPLES ON/OFF、STATS 與 STATS RESET 控制量測；OSD OFF/BOXES/FULL 用於隔離比較；USB RETRY 只人工重等一次協商，未保證恢復。STATUS 補 USB、NN、分數、FPS 與 MEM；SDK ready 不代表 Windows 已收到影格。歷史 RAM 滿 32 筆覆蓋最舊，重開機清空。</p>
+</section>
+<section>
+<h2>實物測試、改善前後比較</h2>
+<div class="callout"><b>以下統計屬於 2026/10/21 既有原型，並非 v2.0 重測。</b><br>原報告記錄團隊提供 AIOT.zip；本次直接依原 PDF 的 40 筆表格與縮圖核對。單張照片不能證明等待時長、完整狀態切換或 LED 反應，不能推算端到端成功率。</div>
+<h3>七、30 次初測＋10 次重測</h3>
+<table class="numeric"><tr><th>組別／各 10 次</th><th>Plants &gt; 0</th><th>已確認 C</th><th>確認中 K</th><th>未確認 U</th></tr>
+<tr><td>正常 N</td><td>9／10（90%）</td><td>6</td><td>4</td><td>0</td></tr>
+<tr><td>干擾 I</td><td>4／10（40%）</td><td>0</td><td>7</td><td>3</td></tr>
+<tr><td>非目標 A</td><td>0／10</td><td>0</td><td>0</td><td>10</td></tr>
+<tr><td>重測 R</td><td>10／10（100%）</td><td>3</td><td>7</td><td>0</td></tr></table>
+<p>正常讓植物與花盆入鏡；干擾採紙板遮擋、角度變化，另有強光回報；非目標為桌面、鍵盤、電話等，A02／A04 仍有局部植株或盆器入鏡。重測依改善架設流程進行，部分仍含遮擋與光源。各組依原檔名時間排序，不把相鄰影格新增為試次。</p>
+<p>干擾到重測的「截圖當下合格偵測比例」相差 60 個百分點，但兩批遮擋與光線未量化，不能解讀為控制實驗成效。重測 7 張仍是 CHECKING，分數達標不等於已完成 2 秒確認。目標試次 C 記「是」、K 記「未定」、U 記「否」；非目標 U 記「是」。Confirm／Alert 是開機期累積值且可見重置，不能跨照片相減。</p>
+<h3>八、第三週實體架設改善</h3>
+<table><tr><th width="23%">面向</th><th>改善前</th><th>採用流程／限制</th></tr>
+<tr><td>距離與角度</td><td>目標大小不一、花盆不完整、斜拍或俯拍。</td><td>約 20～30 cm、水平正對與固定支架；此為本組配置，非通用最佳距離。</td></tr>
+<tr><td>光線與遮擋</td><td>反光、強光或紙板遮住外觀特徵。</td><td>避免直射與非必要遮擋，檢查曝光及完整構圖；當週未改模型或門檻。</td></tr>
+<tr><td>結果留存</td><td>有框或分數達標容易被當作確認成功。</td><td>記錄 C／K／U 與歷史，保留失敗及未定；補錄完整切換才能驗證時間。</td></tr></table>
+<h3>九、v2.0 程式行為比較；效果仍待實機</h3>
+<table><tr><th width="29%">既有行為／風險</th><th>本次修改</th></tr>
+<tr><td>漏判立刻消框／重算確認</td><td>600 ms HOLD 與 1000 ms 漏判容忍分開；保留 2 秒／至少 3 輪、5 秒提醒，不把暫存框計入真實命中。</td></tr>
+<tr><td>USB 等待可能擋 UART</td><td>保留官方 nnbegin()，移至唯一影像工作；不以含永久迴圈的 begin() 取代。</td></tr>
+<tr><td>輪詢、啟停及疊字負荷</td><td>避開 4.0.9 cameraGetCtx() 的配置遺失路徑，只依 host state 變化啟停，減少 OSD 重畫與高頻日誌；未證明其為凍結唯一根因。</td></tr></table>
+</section>
+<section>
+<h2>驗證、限制與最終交付</h2>
+<h3>十、已完成與待驗證項目</h3>
+<table><tr><th width="26%">項目</th><th>目前證據</th></tr>
+<tr><td>4.0.9 編譯與封裝</td><td>A0／A1／B／C／D／E／F 七階段及 F 備用配置均 exit 0；最終版又從儲存庫重新編譯通過。封裝辨識 yolov7_tiny、Flash 與 video ON。</td></tr>
+<tr><td>主機測試</td><td>v1.1 相容 10 組＋v2.0 邏輯 13 組＋解析 3 項通過；階段副本與官方 checksum 核對通過。主機測試不模擬完整 USB、NPU、OSD 與排程。</td></tr>
+<tr><td>資源與實機限制</td><td>映像 10,113,024／16,777,216 bytes，約 60%，不是 RAM 餘裕。Windows 流暢度、原始辨識率、LED、UART-only、重連及長時間無洩漏均待實機驗證。</td></tr></table>
+<p><b>燒錄後順序：</b>① 只接 UART 測 PING／STATUS；② Windows 相機連續 10 分鐘、每分鐘採 MEM；③ 固定盆栽 2 分鐘觀察 LIVE／HOLD 與真實回呼；④ 移除後看 30 秒，確認框到期、5 秒負結果提醒及事件去重；⑤ 反覆移入移出、重開相機與不斷電拔插 OTG，確認 UART 與恢復狀態。失敗先保存診斷，再依排錯文件重開或 RESET。</p>
+<h3>十一、限制與後續方向</h3>
+<p>螢幕圖片也可能被辨識，N05 的 Plants:2 不等於現場有兩盆；不辨別實物、圖片、植物健康或缺水，不能作為澆灌唯一依據。顯示框穩定不代表模型準確率改善。比較門檻時固定距離、光線與同一張圖片，每次只改一個變因，另測無盆栽場景；分開統計真實命中／漏判／誤判與框線可見時間。暫不換模型、不重新訓練；區域限制、感測器、補光與澆灌為後續方向。</p>
+<h3>十二、繳交連結與檔案</h3>
+<p>完整程式與 README：<a href="https://github.com/PikaO3O/SmartTree_v2.0">github.com/PikaO3O/SmartTree_v2.0</a>。開啟 SmartTree/SmartTree.ino；必要 .h／.cpp、七階段原始碼、TEST_PLAN、TROUBLESHOOTING、CHANGELOG、VALIDATION 與編譯紀錄一併整理。舊 ZIP 與說明保留供回溯，最終上傳狀態以 GitHub 實際內容為準。</p>
+<p class="small">第三週既有影片：<a href="https://youtube.com/shorts/PcYU52YbqdI?si=zondtvD29r9LTvL2">youtu.be／PcYU52YbqdI</a>；第二週：<a href="https://www.youtube.com/watch?v=7AZeHTlY3Kw">youtu.be／7AZeHTlY3Kw</a>；第一週：<a href="https://youtu.be/D-Yb5PcfHdc?si=5_vxSwRFiwOsclLX">youtu.be／D-Yb5PcfHdc</a>。既有連結未在本次確認片長及完整情境覆蓋，不能宣稱已滿足最終 2～3 分鐘展示要求。</p>
+<p class="small"><b>最終影片建議 2 分 30 秒：</b>0:00～0:20 展示接線與環境；0:20～1:00 正常確認／LED／計數；1:00～1:40 移除目標並等待提醒；1:40～2:10 展示遮擋漏判或圖片亦會被識別的限制；2:10～2:30 顯示 HISTORY 與總結。需實際拍攝並上傳 YouTube，再將最終連結置入本 PDF。</p>
+<p class="small">官方依據：<a href="https://github.com/Ameba-AIoT/ameba-arduino-pro2/tree/V4.0.9">AmebaPro2 V4.0.9</a> 的 UVCDObjectDetectionLoop、UVC_Device 與相關 API；精確來源及 SHA256 見 SOURCE_REFERENCES.md。AI 協助程式核對、重構、測試與報告編排；團隊負責實作、拍攝、硬體驗證及結果判讀。</p>
+</section>
+</body></html>

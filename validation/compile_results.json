@@ -1,0 +1,135 @@
+[
+  {
+    "target": "A0",
+    "returncode": 0,
+    "elapsed_seconds": 3.1,
+    "command": [
+      "/workspace/scratch/35d3fca268ac/arduino/bin/arduino-cli",
+      "--config-file",
+      "/workspace/scratch/35d3fca268ac/arduino/arduino-cli.yaml",
+      "compile",
+      "--fqbn",
+      "realtek:AmebaPro2:Ameba_AMB82-MINI:04_CameraOption=f37,06_LoadNNModelSource=flash,07_SHOWNNLOGS=Disable",
+      "--build-path",
+      "/workspace/scratch/35d3fca268ac/arduino/builds/A0",
+      "--jobs",
+      "4",
+      "/workspace/scratch/35d3fca268ac/SmartTree_W2_v2.0/stages/A0_OfficialYOLOv7/SmartTree"
+    ],
+    "log": "compile_A0.log"
+  },
+  {
+    "target": "A1",
+    "returncode": 0,
+    "elapsed_seconds": 3.06,
+    "command": [
+      "/workspace/scratch/35d3fca268ac/arduino/bin/arduino-cli",
+      "--config-file",
+      "/workspace/scratch/35d3fca268ac/arduino/arduino-cli.yaml",
+      "compile",
+      "--fqbn",
+      "realtek:AmebaPro2:Ameba_AMB82-MINI:04_CameraOption=f37,06_LoadNNModelSource=flash,07_SHOWNNLOGS=Disable",
+      "--build-path",
+      "/workspace/scratch/35d3fca268ac/arduino/builds/A1",
+      "--jobs",
+      "4",
+      "/workspace/scratch/35d3fca268ac/SmartTree_W2_v2.0/stages/A1_OfficialUSBPreset/SmartTree"
+    ],
+    "log": "compile_A1.log"
+  },
+  {
+    "target": "B",
+    "returncode": 0,
+    "elapsed_seconds": 3.42,
+    "command": [
+      "/workspace/scratch/35d3fca268ac/arduino/bin/arduino-cli",
+      "--config-file",
+      "/workspace/scratch/35d3fca268ac/arduino/arduino-cli.yaml",
+      "compile",
+      "--fqbn",
+      "realtek:AmebaPro2:Ameba_AMB82-MINI:04_CameraOption=f37,06_LoadNNModelSource=flash,07_SHOWNNLOGS=Disable",
+      "--build-path",
+      "/workspace/scratch/35d3fca268ac/arduino/builds/B",
+      "--jobs",
+      "4",
+      "/workspace/scratch/35d3fca268ac/SmartTree_W2_v2.0/stages/B_PlantOnly/SmartTree"
+    ],
+    "log": "compile_B.log"
+  },
+  {
+    "target": "C",
+    "returncode": 0,
+    "elapsed_seconds": 3.37,
+    "command": [
+      "/workspace/scratch/35d3fca268ac/arduino/bin/arduino-cli",
+      "--config-file",
+      "/workspace/scratch/35d3fca268ac/arduino/arduino-cli.yaml",
+      "compile",
+      "--fqbn",
+      "realtek:AmebaPro2:Ameba_AMB82-MINI:04_CameraOption=f37,06_LoadNNModelSource=flash,07_SHOWNNLOGS=Disable",
+      "--build-path",
+      "/workspace/scratch/35d3fca268ac/arduino/builds/C",
+      "--jobs",
+      "4",
+      "/workspace/scratch/35d3fca268ac/SmartTree_W2_v2.0/stages/C_HoldAndPresence/SmartTree"
+    ],
+    "log": "compile_C.log"
+  },
+  {
+    "target": "D",
+    "returncode": 0,
+    "elapsed_seconds": 3.43,
+    "command": [
+      "/workspace/scratch/35d3fca268ac/arduino/bin/arduino-cli",
+      "--config-file",
+      "/workspace/scratch/35d3fca268ac/arduino/arduino-cli.yaml",
+      "compile",
+      "--fqbn",
+      "realtek:AmebaPro2:Ameba_AMB82-MINI:04_CameraOption=f37,06_LoadNNModelSource=flash,07_SHOWNNLOGS=Disable",
+      "--build-path",
+      "/workspace/scratch/35d3fca268ac/arduino/builds/D",
+      "--jobs",
+      "4",
+      "/workspace/scratch/35d3fca268ac/SmartTree_W2_v2.0/stages/D_LedsEventsOSD/SmartTree"
+    ],
+    "log": "compile_D.log"
+  },
+  {
+    "target": "E",
+    "returncode": 0,
+    "elapsed_seconds": 3.43,
+    "command": [
+      "/workspace/scratch/35d3fca268ac/arduino/bin/arduino-cli",
+      "--config-file",
+      "/workspace/scratch/35d3fca268ac/arduino/arduino-cli.yaml",
+      "compile",
+      "--fqbn",
+      "realtek:AmebaPro2:Ameba_AMB82-MINI:04_CameraOption=f37,06_LoadNNModelSource=flash,07_SHOWNNLOGS=Disable",
+      "--build-path",
+      "/workspace/scratch/35d3fca268ac/arduino/builds/E",
+      "--jobs",
+      "4",
+      "/workspace/scratch/35d3fca268ac/SmartTree_W2_v2.0/stages/E_IndependentUART/SmartTree"
+    ],
+    "log": "compile_E.log"
+  },
+  {
+    "target": "F",
+    "returncode": 0,
+    "elapsed_seconds": 3.23,
+    "command": [
+      "/workspace/scratch/35d3fca268ac/arduino/bin/arduino-cli",
+      "--config-file",
+      "/workspace/scratch/35d3fca268ac/arduino/arduino-cli.yaml",
+      "compile",
+      "--fqbn",
+      "realtek:AmebaPro2:Ameba_AMB82-MINI:04_CameraOption=f37,06_LoadNNModelSource=flash,07_SHOWNNLOGS=Disable",
+      "--build-path",
+      "/workspace/scratch/35d3fca268ac/arduino/builds/F",
+      "--jobs",
+      "4",
+      "/workspace/scratch/35d3fca268ac/SmartTree_W2_v2.0/SmartTree"
+    ],
+    "log": "compile_F.log"
+  }
+]

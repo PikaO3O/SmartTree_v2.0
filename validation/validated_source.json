@@ -1,0 +1,34 @@
+[
+  {
+    "file": "SmartTree/CommandParser.h",
+    "sha256": "acf4315d5a709ace8fa1839e8b20cce80d36cb4118b471caf6746d43ab803077"
+  },
+  {
+    "file": "SmartTree/DetectionSnapshot.h",
+    "sha256": "ed9569f467ea277cfd68deb23da753e69d8c60edb422b35ec5563e93bc63984d"
+  },
+  {
+    "file": "SmartTree/ObjectClassList.h",
+    "sha256": "0e1ee1e2c4eb23af1e04ca50e2333c271a9829ddbb8ebbeffab0fe61c1333d2e"
+  },
+  {
+    "file": "SmartTree/PlantMonitor.h",
+    "sha256": "46ead4a5b12d2491fff9491a95c1ef9ae625380be25ac07b0d984fa7a194a324"
+  },
+  {
+    "file": "SmartTree/SmartTree.ino",
+    "sha256": "efd6fb3db8dfed7dea191d08ff2e2bdef39ea439f4446144f2a59fb9ed70774e"
+  },
+  {
+    "file": "SmartTree/SmartTreeApp.cpp",
+    "sha256": "99e02371541b70b1a47f9662c5fcd6d222d55c5553cd2b9fd8a27143cb2fdeec"
+  },
+  {
+    "file": "SmartTree/SmartTreeApp.h",
+    "sha256": "ed6aa159a64234015ef270a844440f083d14fe733ab9a4ee4e50ed2ce01738a8"
+  },
+  {
+    "file": "SmartTree/SmartTreeConfig.h",
+    "sha256": "f24dd226e6fa8976cee5cebac6f63fa99e712d55662f48e9dd6681c4204a96b3"
+  }
+]
